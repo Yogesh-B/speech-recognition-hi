@@ -6,18 +6,14 @@ if ("webkitSpeechRecognition" in window) {
   speechRecognition.continuous = true;
   speechRecognition.interimResults = true;
   speechRecognition.lang = 'gu-IN';
-  console.log(speechRecognition.lang);
-  console.log("hii");
   speechRecognition.onstart = () => {
     document.querySelector("#status").style.display = "block";
   };
   speechRecognition.onerror = () => {
     document.querySelector("#status").style.display = "none";
-    console.log("Speech Recognition Error");
   };
   speechRecognition.onend = () => {
     document.querySelector("#status").style.display = "none";
-    console.log("Speech Recognition Ended");
     if(!stop) {
       speechRecognition.start();
     }
