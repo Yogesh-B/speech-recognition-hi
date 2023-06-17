@@ -25,8 +25,10 @@ if ("webkitSpeechRecognition" in window) {
     for (let i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
         final_transcript += event.results[i][0].transcript;
+        window.scrollTo(0, document.body.scrollHeight);
       } else {
         interim_transcript += event.results[i][0].transcript;
+        window.scrollTo(0, document.body.scrollHeight);
       }
     }
     document.querySelector("#final").innerHTML = final_transcript;
