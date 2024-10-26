@@ -5,7 +5,7 @@ if ("webkitSpeechRecognition" in window) {
 
   speechRecognition.continuous = true;
   speechRecognition.interimResults = true;
-  speechRecognition.lang = 'gu-IN';
+  speechRecognition.lang = 'hi-IN';
   speechRecognition.onstart = () => {
     document.querySelector("#status").style.display = "block";
   };
